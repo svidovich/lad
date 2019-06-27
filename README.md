@@ -1,5 +1,3 @@
-### TODO: Make this a true python package that one can install. Then, put in on PYPI. Let's get more LADs in before that last step, shall we?
-
 # lad
 
 Linux allocated devices parsing library for python.
