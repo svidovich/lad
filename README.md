@@ -1,4 +1,19 @@
 # lad
-Linux allocated devices parsing library for python. Why doesn't this exist already?
 
-EDIT: Remembering how long this spec is, I can see _exactly_ why it wasn't created already. God, this is going to suck. Someone better buy me a beer when this is done.
+Linux allocated devices parsing library for python.
+
+Use:
+
+`from lad import convert`
+
+`major_minor = convert('sda5)`
+
+That's all.
+
+## Why this implementation is good
+
+It only loads what it needs to when it needs to. It does so quickly.
+
+## Why this implementation is bad
+
+I need help. There are a lot of LADs.
