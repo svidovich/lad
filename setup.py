@@ -2,7 +2,7 @@ from setuptools import setup
 
 # yapf: disable
 setup(
-    name='lad',
+    name='linux-allocated',
     version='0.1',
     url='https://github.com/svidovich/lad',
     author='svidovich',
