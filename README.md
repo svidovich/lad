@@ -6,11 +6,11 @@ Linux allocated devices parsing library for python.
 
 Use:
 
-`from lad import convert`
+`from lad import lad`
 
-`major_minor = convert('sda5')` or
+`major_minor = lad.convert('sda5')` or
 
-`name = convert('8:6')`
+`name = lad.convert('8:6')`
 
 That's all.
 
