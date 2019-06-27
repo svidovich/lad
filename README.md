@@ -6,7 +6,9 @@ Use:
 
 `from lad import convert`
 
-`major_minor = convert('sda5)`
+`major_minor = convert('sda5')` or
+
+`name = convert('8:6')
 
 That's all.
 
