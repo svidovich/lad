@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # We are going to load data from a file. If this package is installed,
 # it needs to be able to find the file properly
 import pkg_resources
