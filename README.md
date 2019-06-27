@@ -8,7 +8,7 @@ Use:
 
 `major_minor = convert('sda5')` or
 
-`name = convert('8:6')
+`name = convert('8:6')`
 
 That's all.
 
