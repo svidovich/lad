@@ -1,4 +1,4 @@
-## TODO: Make this a true python package that one can install. Then, put in on PYPI. Let's get more LADs in before that last step, shall we?
+### TODO: Make this a true python package that one can install. Then, put in on PYPI. Let's get more LADs in before that last step, shall we?
 
 # lad
 
@@ -21,3 +21,7 @@ It only loads what it needs to when it needs to. It does so quickly.
 ## Why this implementation is bad
 
 I need help. There are a lot of LADs.
+
+## Find it on pypi!
+
+https://pypi.org/project/linux-allocated/0.1/
