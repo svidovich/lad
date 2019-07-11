@@ -34,26 +34,47 @@ def load_device_major_minor_data_from_file(path):
 # TODO: Make these support multiple data paths
 def construct_name_hash_lookup(data_paths):
     linux_allocated_devices = {
-        'scsi_disk_devices': load_device_name_data_from_file(data_paths)
+        f'{data_paths}'.replace('data/', '').replace('.txt', ''):
+        load_device_name_data_from_file(data_paths)
     }
     return linux_allocated_devices
 
 
 def construct_major_minor_hash_lookup(data_paths):
     linux_allocated_devices = {
-        'scsi_disk_devices': load_device_major_minor_data_from_file(data_paths)
+        f'{data_paths}'.replace('data/', '').replace('.txt', ''):
+        load_device_major_minor_data_from_file(data_paths)
     }
     return linux_allocated_devices
 
 
 def convert(string):
-    if re.search('^[a-z]{2,4}[0-9]{1,3}', string.lower()):
+    if re.search('^sd[a-p][0-9]{1,3}', string.lower()):
         lookup_table = construct_name_hash_lookup('data/scsi_disk_devices.txt')
         return lookup_table['scsi_disk_devices'][string]
-    elif re.search('^[0-9]{1,3}:[0-9]{1,3}', string.lower()):
+    elif re.search('^8:[0-9]{1,3}', string.lower()):
         lookup_table = construct_major_minor_hash_lookup(
             'data/scsi_disk_devices.txt')
         return lookup_table['scsi_disk_devices'][string]
+    # tty handling
+    elif re.search('^tty[sS]?[0-9]{1,3}', string.lower()):
+        lookup_table = construct_name_hash_lookup('data/ttys.txt')
+        return lookup_table['ttys'][string]
+    elif re.search('^4:[0-9]{1,3}', string.lower()):
+        lookup_table = construct_major_minor_hash_lookup('data/ttys.txt')
+        return lookup_table['ttys'][string]
+    # ramdisk handling
+    elif re.search('^ram[0-9]{1,3}', string.lower()):
+        lookup_table = construct_name_hash_lookup('data/ram_disks.txt')
+        return lookup_table['ram_disks'][string]
+    # special case...!
+    elif string.lower() == 'initrd':
+        return '8:250'
+
+    elif re.search('^1:[0-9]{1,3}', string.lower()):
+        lookup_table = construct_major_minor_hash_lookup('data/ram_disks.txt')
+        return lookup_table['ram_disks'][string]
+
     else:
         raise NotImplementedError(
             f'Chosen device f{string} is either not implemented or has no known matching LAD'
