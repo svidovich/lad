@@ -12,6 +12,14 @@ Use:
 
 That's all.
 
+# Supported LADs
+
+⋅ SCSI Block Devices (sdX)
+
+⋅ ramdisks (ramX, initrd)
+
+⋅ TTYs (ttyX, ttySx)
+
 ## Why this implementation is good
 
 It only loads what it needs to when it needs to. It does so quickly.
@@ -22,4 +30,4 @@ I need help. There are a lot of LADs.
 
 ## Find it on pypi!
 
-https://pypi.org/project/linux-allocated/0.1/
+https://pypi.org/project/linux-allocated
