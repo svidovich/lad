@@ -6,7 +6,7 @@ with open(path.join(cwd, 'README.md'), encoding='utf-8') as file_handle:
 # yapf: disable
 setup(
     name='linux-allocated',
-    version='0.2',
+    version='0.3',
     url='https://github.com/svidovich/lad',
     author='svidovich',
     author_email='samuel.vidovich@gmail.com',
